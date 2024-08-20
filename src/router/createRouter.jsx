@@ -4,9 +4,7 @@ import {
     Route,
 } from "react-router-dom";
 
-import { routingPath } from "src/router/paths/index";
-
-const { heroesApp, marvel, dc, error, login } = routingPath;
+import { dc, error, heroesApp, login, marvel } from "src/router/paths";
 
 export const router = createBrowserRouter(
     createRoutesFromElements(

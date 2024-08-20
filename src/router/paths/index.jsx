@@ -1,7 +1,7 @@
 import { HeroesApp } from "src/HeroesApp";
 import { DC, ErrorPage, Login, Marvel } from "src/heroes/pages";
 
-export const routingPath = {
+const routingPath = {
     heroesApp: {
         path: "/",
         component: <HeroesApp />,
@@ -22,3 +22,5 @@ export const routingPath = {
         component: <ErrorPage />,
     },
 };
+
+export const { heroesApp, marvel, dc, login, error } = routingPath;
