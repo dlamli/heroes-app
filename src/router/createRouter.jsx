@@ -4,7 +4,15 @@ import {
     Route,
 } from "react-router-dom";
 
-import { dc, error, heroesApp, login, marvel } from "src/router/paths";
+import {
+    dc,
+    error,
+    heroesApp,
+    heroInfo,
+    login,
+    marvel,
+    search,
+} from "src/router/paths";
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
@@ -16,6 +24,8 @@ export const router = createBrowserRouter(
             <Route path={marvel.path} element={marvel.component} />
             <Route path={dc.path} element={dc.component} />
             <Route path={login.path} element={login.component} />
+            <Route path={search.path} element={search.component} />
+            <Route path={heroInfo.path} element={heroInfo.component} />
         </Route>
     )
 );

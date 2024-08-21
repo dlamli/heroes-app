@@ -1,15 +1,24 @@
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { dc, heroesApp, login, marvel } from "src/router/paths";
 
 export const NavBar = () => {
+
+    const navigate = useNavigate();
+
+    const onLogout = () => {
+        navigate(login.path, {
+            replace: true,
+        })
+    };
+
     return (
         <>
             <Navbar
                 bg="dark"
                 collapseOnSelect
                 expand="lg"
-                className="bg-body-tertiary"
+                className="bg-body-tertiary mb-4"
                 data-bs-theme="dark"
             >
                 <Container>
@@ -25,15 +34,14 @@ export const NavBar = () => {
                             <Nav.Link as={NavLink} to={dc.path}>
                                 DC
                             </Nav.Link>
-                            <Nav.Link as={NavLink} to={login.path}>
-                                Login
-                            </Nav.Link>
                         </Nav>
                         <Nav>
                             <span className="nav-link nav-item text-info">
-                                User
+                                Welcome: User
                             </span>
-                            <Button variant="outline-info">Logout</Button>
+                            <Button variant="outline-info" onClick={onLogout}>
+                                Logout
+                            </Button>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
