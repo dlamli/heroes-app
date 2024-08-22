@@ -10,7 +10,9 @@ export const Routing = () => {
                 <Route path={marvel.path} element={marvel.component} />
 
                 <Route path={search.path} element={search.component} />
-                <Route path={heroInfo.path} element={heroInfo.component} />
+                <Route path={heroInfo.path} element={heroInfo.component}>
+                    <Route path=":heroId" element={heroInfo.component} />
+                </Route>
 
                 <Route path={heroesHome.path} element={heroesHome.component} />
             </Routes>

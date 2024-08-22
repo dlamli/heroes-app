@@ -1,6 +1,6 @@
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { dc, heroesApp, login, marvel } from "src/router/paths";
+import { dc, heroesApp, login, marvel, search } from "src/router/paths";
 
 export const NavBar = () => {
 
@@ -33,6 +33,9 @@ export const NavBar = () => {
                             </Nav.Link>
                             <Nav.Link as={NavLink} to={dc.path}>
                                 DC
+                            </Nav.Link>
+                            <Nav.Link as={NavLink} to={search.path}>
+                                Search
                             </Nav.Link>
                         </Nav>
                         <Nav>

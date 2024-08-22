@@ -3,8 +3,8 @@ import { HeroesRoutes } from "src/heroes";
 import {
     DC,
     ErrorPage,
-    Hero,
     HeroesHome,
+    HeroInfo,
     Marvel,
     Search,
 } from "src/heroes/pages";
@@ -44,8 +44,8 @@ const routingPath = {
         component: <Search />,
     },
     heroInfo: {
-        path: "/hero",
-        component: <Hero />,
+        path: "/heroes",
+        component: <HeroInfo />,
     },
     // ----------------------------------------------------------------
     // Global

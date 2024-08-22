@@ -3,4 +3,4 @@ export * from "src/global/pages/Error/ErrorPage";
 export * from "src/heroes/pages/Marvel/Marvel";
 export * from "src/heroes/pages/Home/HeroesHome";
 export * from "src/heroes/pages/Search/Search";
-export * from "src/heroes/pages/Hero/Hero";
+export * from "src/heroes/pages/HeroInfo/HeroInfo";

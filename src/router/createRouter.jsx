@@ -25,7 +25,9 @@ export const router = createBrowserRouter(
             <Route path={dc.path} element={dc.component} />
             <Route path={login.path} element={login.component} />
             <Route path={search.path} element={search.component} />
-            <Route path={heroInfo.path} element={heroInfo.component} />
+            <Route path={heroInfo.path} element={heroInfo.component}>
+                <Route path=":heroId" element={heroInfo.component} />
+            </Route>
         </Route>
     )
 );

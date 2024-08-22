@@ -1,16 +1,18 @@
-import { getHeroByPublisher } from "src/heroes/helpers/getHeroesByPublisher";
+import { Container, Row } from "react-bootstrap";
+import { getHeroByPublisher } from "src/heroes/helpers";
+import { HeroCard } from "src/heroes/components";
+import { useMemo } from "react";
 
 export const HeroList = ({ publisher }) => {
-
-    const heroes = getHeroByPublisher(publisher);
+    const heroes = useMemo(() => getHeroByPublisher(publisher), [publisher]);
 
     return (
-        <ul>
-            {
-                heroes.map((hero) => (
-                    <li key={hero.id}>{hero.superhero}</li>
-                ))
-            }
-        </ul>
+        <Container>
+            <Row md={3} className="g-3">
+                {heroes.map((hero) => (
+                    <HeroCard key={hero.id} {...hero} />
+                ))}
+            </Row>
+        </Container>
     );
 };
