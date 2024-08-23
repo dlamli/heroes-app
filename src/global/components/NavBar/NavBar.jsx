@@ -1,15 +1,18 @@
+import { useContext } from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { dc, heroesApp, login, marvel, search } from "src/router/paths";
+import { AuthContext } from "src/auth";
+import { dc, login, marvel, search } from "src/router/paths";
 
 export const NavBar = () => {
-
     const navigate = useNavigate();
+    const { user, logout } = useContext(AuthContext);
 
     const onLogout = () => {
+        logout();
         navigate(login.path, {
             replace: true,
-        })
+        });
     };
 
     return (
@@ -22,7 +25,7 @@ export const NavBar = () => {
                 data-bs-theme="dark"
             >
                 <Container>
-                    <Navbar.Brand as={Link} to={heroesApp.path}>
+                    <Navbar.Brand as={Link} to={marvel.path}>
                         HeroesApp
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -40,7 +43,7 @@ export const NavBar = () => {
                         </Nav>
                         <Nav>
                             <span className="nav-link nav-item text-info">
-                                Welcome: User
+                                Welcome: {user?.username || 'Guest'}
                             </span>
                             <Button variant="outline-info" onClick={onLogout}>
                                 Logout

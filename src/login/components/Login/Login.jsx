@@ -1,12 +1,19 @@
+import { useContext } from "react";
 import { Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { heroesHome } from "src/router/paths";
+import { AuthContext } from "src/auth";
+import { marvel } from "src/router/paths";
 
 export const Login = () => {
+    const { login } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const onLogin = () => {
-        navigate(heroesHome.path, {
+        const lastPath = localStorage.getItem("lastPath") || marvel.path;
+
+        login("Danny");
+
+        navigate(lastPath, {
             replace: true, // Replace the current history entry with the new one
             // state: { from: heroesHome.path }, // Pass the current path as state when redirecting to DC heroes page
         });

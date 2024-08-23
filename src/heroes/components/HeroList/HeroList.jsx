@@ -1,9 +1,9 @@
 import { Container, Row } from "react-bootstrap";
 import { getHeroByPublisher } from "src/heroes/helpers";
 import { HeroCard } from "src/heroes/components";
-import { useMemo } from "react";
+import { memo, useMemo } from "react";
 
-export const HeroList = ({ publisher }) => {
+export const HeroList = memo(({ publisher }) => {
     const heroes = useMemo(() => getHeroByPublisher(publisher), [publisher]);
 
     return (
@@ -15,4 +15,4 @@ export const HeroList = ({ publisher }) => {
             </Row>
         </Container>
     );
-};
+});

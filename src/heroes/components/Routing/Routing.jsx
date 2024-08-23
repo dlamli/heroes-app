@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap";
 import { Route, Routes } from "react-router-dom";
-import { dc, heroesHome, heroInfo, marvel, search } from "src/router/paths";
+import { dc, heroInfo, marvel, search } from "src/router/paths";
 
 export const Routing = () => {
     return (
@@ -14,7 +14,6 @@ export const Routing = () => {
                     <Route path=":heroId" element={heroInfo.component} />
                 </Route>
 
-                <Route path={heroesHome.path} element={heroesHome.component} />
             </Routes>
         </Container>
     );

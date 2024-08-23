@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Button, Card, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { heroInfo } from "src/router/paths";
@@ -6,7 +7,7 @@ const CharactersByHero = ({ alter_ego, characters }) => {
     return alter_ego === characters ? <></> : <p>{characters}</p>;
 };
 
-export const HeroCard = ({
+export const HeroCard = memo(({
     id,
     superhero,
     publisher,
@@ -42,4 +43,4 @@ export const HeroCard = ({
             </Col>
         </>
     );
-};
+});

@@ -14,7 +14,7 @@ const routingPath = {
     // ----------------------------------------------------------------
     // Login Paths
     login: {
-        path: "/login",
+        path: "/",
         component: <Login />,
     },
     heroesRoute: {
@@ -27,10 +27,10 @@ const routingPath = {
         path: "/",
         component: <HeroesApp />,
     },
-    heroesHome: {
-        path: "/",
-        component: <HeroesHome />,
-    },
+    // heroesHome: {
+    //     path: "/",
+    //     component: <HeroesHome />,
+    // },
     marvel: {
         path: "/marvel",
         component: <Marvel />,
